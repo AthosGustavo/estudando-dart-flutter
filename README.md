@@ -47,7 +47,7 @@ Text(
  
 ##### Elementos que Scaffold disponibiliza
 
-###### AppBar
+##### AppBar
  - É a barra superior que geralmente contém o título do aplicativo e possivelmente ações, como botões de navegação ou de ação.
  
 ##### Body
