@@ -41,3 +41,18 @@ Text(
   textAlign: TextAlign.center,
 )
 ```
+
+#### Scaffold, material design
+ - Scaffold é um widget que fornece uma estrutura visual básica para um aplicativo móvel. Ele serve como um "esqueleto" para o layout da sua interface do usuário.
+ 
+##### Elementos que Scaffold disponibiliza
+
+###### AppBar
+ - É a barra superior que geralmente contém o título do aplicativo e possivelmente ações, como botões de navegação ou de ação.
+ 
+##### Body
+ - É a área principal do conteúdo da tela. Pode conter qualquer widget, como listas, colunas, linhas, etc. É definida usando a propriedade body.
+ 
+##### home
+ - Define qual será a tela inicial do aplicativo
+ - home serve para indicar que a tela inicial será definida por Scaffold
