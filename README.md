@@ -1,6 +1,9 @@
 # Estudando Dart/Flutter
 
-## Widget
+<details>
+ <summary>Widget</summary>
+
+ ## Widget
  - Um widget pode ser interpretado como as tags html que exibem algum tipo de conteúdo ou agrupam conteúdos,exemplo: textos, botoẽs, divs, imagem e etc.
 
 ### Tipos de widgets
@@ -56,3 +59,4 @@ Text(
 ##### home
  - Define qual será a tela inicial do aplicativo
  - home serve para indicar que a tela inicial será definida por Scaffold
+</details>
