@@ -11,3 +11,22 @@
 
 #### Stack
  - O Widget Stack é uma alternativa ao Container. O Stack permite agrupamento de widgets e aninhamento de outras Stacks
+
+#### Exemplo de estilização de Container
+```dart
+
+ Container(
+  width: 200.0,
+  height: 100.0,
+  color: Colors.blue,
+  alignment: Alignment.center,
+  margin: EdgeInsets.all(16.0),
+  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
+  child: Text(
+    'Olá, Mundo!',
+    style: TextStyle(color: Colors.white),
+  ),
+)
+
+ 
+```
