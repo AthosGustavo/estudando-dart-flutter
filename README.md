@@ -1,5 +1,18 @@
 # Estudando Dart/Flutter
 
+Material Design
+ - biblioteca com componentes estilizados criado pela google
+Cupertino Design
+ - biblioteca com componentes estilizados para apple
+
+## Método build
+ - No Flutter, a construção da interface do usuário é realizada através do método build de widgets.
+ - Método usado em situações onde ocorre dinamicidade e alterações na tela,a exemplo de um atualizador e reconstrutor de estados e widget em situações onde alguma informação na tela é mudada por meio de uma interação.Por outro lado, o  método também é usado em situações estáticas.
+
+## Flutter inspector
+ - serve para visualizar a arvore de widgets e o tamanho dos widgets
+ - widgets que nao possuem limite de altura ou largura,podem resultar em overflow
+
 <details>
  <summary>Widget</summary>
 
