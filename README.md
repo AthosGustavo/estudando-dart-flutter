@@ -28,5 +28,16 @@
   ),
 )
 
- 
+```
+#### Exemplo de estilização de um widget Text
+```dart
+Text(
+  'Olá, Mundo!',
+  style: TextStyle(
+    fontSize: 20.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.blue,
+  ),
+  textAlign: TextAlign.center,
+)
 ```
