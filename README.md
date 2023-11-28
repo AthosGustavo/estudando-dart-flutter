@@ -4,7 +4,18 @@
  <summary>Lógica de programação</summary>
 
  <details>
-  <summary></summary>
+  <summary>Future</summary>
+
+  O método Future é utilizado para realizar operações assíncronas
+  
+  ```
+  Future<TipoRetorno> nomeFuncao(Tipo parametro parametero) async {
+   
+   return someValue;  // ou throw SomeException;
+  }
+
+  ```
+  
  </details>
 </details>
 
