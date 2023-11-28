@@ -91,4 +91,61 @@ Text(
 ##### home
  - Define qual será a tela inicial do aplicativo
  - home serve para indicar que a tela inicial será definida por Scaffold
+
+<details>
+ <summary>Janela de diálogo</summary>
+
+ Função anônima com parâmetros nomeados
+  - Função com parãmetros e valores atribuídos no próprio parâmetro da função.
+
+ *Exemplo: vamos supor que uma função aceite 3 valores em seu parâmetro*
+ ```dart
+ static carro({
+   String nome = 'gol',
+   String marca = 'Wolksvagem',
+   String cor = 'prata'
+ })
+ ```
+ 
+ ```dart
+ static showDialogWithMessage({
+    String? message,
+    bool autoHide = true,
+    int durationSeconds = 4,
+    bool dismissible = true,
+  }) async {
+    final Widget widget = Center(
+      child: Container(
+        padding: EdgeInsets.all(16.0),
+        width: 300,
+        decoration: BoxDecoration(
+          color: Colors.grey[800],
+          borderRadius: BorderRadius.circular(8.0)
+        ),
+        child: Text(
+          message ?? "Ocorreu um erro. Tente novamente.",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 12.0, // Alterado para fonte de tamanho 12
+            decoration: TextDecoration.none, // Removido sublinhado
+          ),
+        ),
+      ),
+    );
+
+    showDialogDefault(
+      widget: widget,
+      autoHide: autoHide,
+      durationMilli: durationSeconds * 1000,
+      dismissible: dismissible,
+    );
+  }
+ ```
+ 
+</details>
+
+
+
+
+
 </details>
