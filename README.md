@@ -159,16 +159,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Flutter Alerta Exemplo',
       home: Scaffold(
         appBar: AppBar(
           title: Text('Flutter Alerta Exemplo'),
         ),
         body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              _exibirAlerta(context);
+          child: Builder(
+            builder: (BuildContext context) {
+              return ElevatedButton(
+                onPressed: () {
+                  _exibirAlerta(context);
+                },
+                child: Text('Exiba o Alerta'),
+              );
             },
-            child: Text('Exiba o Alerta'),
           ),
         ),
       ),
@@ -195,6 +200,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
 ```
  
