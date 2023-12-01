@@ -145,6 +145,58 @@ Text(
 showDialog
   showDialogDefault
     showDialogWithMessage
+
+### janela de diálogo 2
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Alerta Exemplo'),
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              _exibirAlerta(context);
+            },
+            child: Text('Exiba o Alerta'),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _exibirAlerta(BuildContext context) async {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Alerta Acionado'),
+          content: Text('Esta é a mensagem do alerta.'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Fechar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+```
  
 </details>
 
