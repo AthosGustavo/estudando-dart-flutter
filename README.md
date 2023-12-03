@@ -79,6 +79,30 @@ Text(
 )
 ```
 
+#### Padding
+ - Existe duas formas de usar o padding:Adicionando padding em um widget como um Stack e adicionando padding a um componente que possui vários widgets.
+
+*Adicionando Padding a um Container*
+```dart
+Container(
+  padding: EdgeInsets.all(8.0), // Adiciona padding de 8 pixels em todos os lados
+  child: // Seu conteúdo aqui,
+)
+
+```
+*Adicionando padding a um componente com vários widgets*
+```dart
+Padding(
+  padding: EdgeInsets.all(8.0), // Adiciona padding de 8 pixels em todos os lados
+  child: Row(
+    children: [
+      // Seus widgets da linha aqui
+    ],
+  ),
+)
+
+```
+
 #### ListView
  - O ListView serve para criar uma coluna dinâmica de widgets e permite a rolagem da tela.
 
