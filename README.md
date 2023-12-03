@@ -80,6 +80,86 @@ Text(
 ```
 
 #### ListView
+ - O ListView serve para criar uma coluna dinâmica de widgets e permite a rolagem da tela.
+
+*Componente Tarefa*
+```dart
+class Tarefa extends StatelessWidget {
+  
+  final String nome;
+  const Tarefa(this.nome, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        child: Stack(
+          children: [
+          // O último container está sobreposto em cima do primeiro
+            Container(
+              color: Colors.blue,
+              height: 140,
+            ),
+            Container(
+              color: Colors.white30,
+              height: 100,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    color: Colors.black26,
+                    width: 72,
+                    height: 100,
+                  ),
+                  Text(nome),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Icon(Icons.arrow_drop_up),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }   
+}
+```
+```dart
+lass MyApp extends StatelessWidget {
+  const MyApp({Key? key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Minhas tarefas'),
+          ),
+          body: ListView(
+            children: [
+              Tarefa('Aprendendo Java'),
+              Tarefa('Aprendendo Flutter'),
+              Tarefa('Aprendendo Kotlin'),
+              Tarefa('Aprendendo Kotlin'),
+              Tarefa('Aprendendo Kotlin'),
+              Tarefa('Aprendendo Kotlin'),
+              Tarefa('Aprendendo Kotlin'),
+              Tarefa('Aprendendo Kotlin'),
+              Tarefa('Aprendendo Kotlin')
+            ]
+          ),
+          floatingActionButton: FloatingActionButton(onPressed: () {})),
+    );
+  }
+}
+```
 
 #### Scaffold, material design
  - Scaffold é um widget que fornece uma estrutura visual básica para um aplicativo móvel. Ele serve como um "esqueleto" para o layout da sua interface do usuário.
