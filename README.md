@@ -48,6 +48,7 @@ Cupertino Design
 
 #### Stack
  - O Widget Stack é uma alternativa ao Container. O Stack permite agrupamento de widgets e aninhamento de outras Stacks
+ - O Stack sozinho não possui dimensāo e dessa forma não é possível definir uma cor de fundo.O Stack só possui dimensão se ele possuir um filho ou seja filho de outro widget, a exemplo de um Container.
 
 #### Exemplo de estilização de Container
 ```dart
