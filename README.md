@@ -200,6 +200,11 @@ lass MyApp extends StatelessWidget {
  - Define qual será a tela inicial do aplicativo
  - home serve para indicar que a tela inicial será definida por Scaffold
 
+### Iniciando um widget com valores dinâmicos
+ - Vamos imaginar um componente que possui um widget stack filho e uma imagem como filha de stack.Vários componentes podem ser criados, mas as imagens deve ser diferente.Neste caso, sem usar a dinamicidade, todos os componentes possuíram a mesma imagem.
+
+
+
 <details>
  <summary>Janela de diálogo</summary>
 
