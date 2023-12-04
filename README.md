@@ -204,6 +204,73 @@ lass MyApp extends StatelessWidget {
 ### Iniciando um widget com valores dinâmicos
  - Vamos imaginar um componente que possui um widget stack filho e uma imagem como filha de stack.Vários componentes podem ser criados, mas as imagens deve ser diferente.Neste caso, sem usar a dinamicidade, todos os componentes possuíram a mesma imagem.
 
+```dart
+final String src_img
+this.src_img
+Image.network(src_img)
+Componente(link)
+```
+ - Cada componente terá uma imagem diferente de forma dinâmica e não da forma hard code.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+
+    return MaterialApp(
+      title: 'Flutter app',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Teste'),
+        ),
+        body:Column(
+          children: [
+            
+            Componente('https://cdn.cloudflare.steamstatic.com/steam/apps/861650/header.jpg?t=1698396735'),
+            Componente('https://www.promobit.com.br/blog/wp-content/uploads/2022/05/17183905/skate.jpg')
+          ]
+        )
+        
+          
+      )
+
+    );
+  }
+}
+
+class Componente extends StatelessWidget{
+  
+  final String src_img;
+  const Componente(this.src_img, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+
+    return Padding(
+      padding:EdgeInsets.all(8.0),
+      child: Container(
+        color:Colors.grey,
+        width: 400.0,
+        height: 200.0,
+          child: Stack(
+            children:[
+              Image.network(src_img),
+            ]
+          )
+      )
+    );
+  }
+    
+}
+```
 
 
 <details>
