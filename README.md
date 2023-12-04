@@ -35,8 +35,86 @@ Cupertino Design
 <details>
  <summary>Widget</summary>
 
+ 
+
  ## Widget
  - Um widget pode ser interpretado como as tags html que exibem algum tipo de conteúdo ou agrupam conteúdos,exemplo: textos, botoẽs, divs, imagem e etc.
+
+### StatefulWidget
+  - Widget utilizado em situações em que parte da interface do usuário precisa ser atualizada dinâmicamente, exemplo: Ao clicar em um botão, +1 deve ser incrementado em uma variável e exibido na tela.
+
+#### createState()
+ - createState() é chamado uma vez durante a inicialização do widget.
+ - Ele deve retornar uma nova instância de uma classe que estende State.
+ - A instância da classe de estado fica associada a um único widget e é usada para armazenar e gerenciar o estado mutável desse widget.
+
+#### Classe que implementa StatefulWidget
+ - Responsável por definir a estrutura e configurações de armazenamento de estado.
+
+#### Classe que implementa State
+ - Responsável por manter o estado.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  
+  
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+
+    return MaterialApp(
+      title:'AULA 2',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('StateFullWidget'),
+        ),
+        body: Teste(),
+        
+      )
+    );
+  }
+}
+
+class Teste extends StatefulWidget{
+  const Teste({Key? key}) : super(key: key);
+
+  @override
+  State<Teste> createState() => _Teste();
+}
+
+class _Teste extends State<Teste>{
+  int contador = 0;
+
+  void _incrementador(){
+    setState((){
+      contador++;
+    });
+  }
+
+
+  @override
+  Widget build(BuildContext context){
+    return Container(
+      child: Column(
+        children: [
+          Text('contado: ${contador}'),
+          ElevatedButton(
+            onPressed: (){_incrementador();},
+            child: Text('Clique em mim!'))
+        ]
+      )
+    );
+  }  
+}
+```
+ 
 
 ### Tipos de widgets
 
