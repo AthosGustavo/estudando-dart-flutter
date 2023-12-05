@@ -279,6 +279,63 @@ lass MyApp extends StatelessWidget {
  - Define qual será a tela inicial do aplicativo
  - home serve para indicar que a tela inicial será definida por Scaffold
 
+<details>
+ <summary>Formulários</summary>
+
+ ## Formulários
+
+ ### Manipulando inputs
+
+ #### TextFormField
+ ##### Controller
+  - A Classe TextEditingController permite controlar e manipular o texto no campo de entrada ```TextFormField``` e o Controller é a instância dessa classe.
+
+###### Principais funcionalidades  do Controller
+ - Recuperar o Texto Atual
+```dart
+TextEditingController nomeController = TextEditingController();
+String valueInput = nomeController.text;
+
+TextFormField(
+  controller: nomeController
+)
+```
+*Exemplo*
+```dart
+class Form extends StatefulWidget{
+
+  @override
+  _Form createState() => _Form(); 
+}
+
+class _Form extends State<Form>{
+  TextEditingController nomeController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context){
+
+    return Container(
+      child: Column(
+        children: [
+          TextFormField(
+            controller: nomeController,
+            decoration: InputDecoration(labelText: 'Digite algo'),
+          ),
+          TextButton(onPressed: (){print(nomeController.text);}, child: Text('Clique aqui'))
+        ]
+      )
+    );
+
+  }
+
+}
+```
+
+
+ 
+ 
+</details>
+
 ### Iniciando um widget com valores dinâmicos
  - Vamos imaginar um componente que possui um widget stack filho e uma imagem como filha de stack.Vários componentes podem ser criados, mas as imagens deve ser diferente.Neste caso, sem usar a dinamicidade, todos os componentes possuíram a mesma imagem.
 
