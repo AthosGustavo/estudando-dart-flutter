@@ -290,6 +290,55 @@ lass MyApp extends StatelessWidget {
  ##### Controller
   - A Classe TextEditingController permite controlar e manipular o texto no campo de entrada ```TextFormField``` e o Controller é a instância dessa classe.
 
+ ##### Como usar o método onChanged
+
+ *Utilizando onChanged para monitorar um input*
+
+  - onChanged recebe em seu parâmetro o atributo text da classe TextEditingController e no seu escopo recebe o método setState para atualizar em especifico o valor de inputImgController.text.
+ 
+ ```dart
+ class CarregadorImg extends StatefulWidget{
+
+  @override
+  _CarregadorImg createState() => _CarregadorImg();
+}
+
+class _CarregadorImg extends State<CarregadorImg>{
+
+  TextEditingController inputImgController = TextEditingController();
+  //late String valueInputImg;
+  
+  @override
+  Widget build(BuildContext context){
+    return Container(
+      child: Column(
+        children: [
+          TextFormField(
+            controller: inputImgController,
+            onChanged: (text){
+              setState((){});
+            },
+            decoration: InputDecoration(
+              labelText: 'Digite a URL da imagem.'),
+              
+          ),
+          Container(
+            height: 100,
+            width: 100,
+            child: inputImgController.text.isNotEmpty ? Image.network(
+              inputImgController.text,
+              fit: BoxFit.cover,
+            ) : Container(),
+          ),
+          // TextButton(onPressed: (){}, child: Text('Clique aqui')),  
+        ],
+      )
+    );
+  }
+}
+```
+ 
+
 ###### Principais funcionalidades  do Controller
  - Recuperar o Texto Atual
 ```dart
