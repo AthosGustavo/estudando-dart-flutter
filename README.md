@@ -337,7 +337,6 @@ class _CarregadorImg extends State<CarregadorImg>{
   }
 }
 ```
- 
 
 ###### Principais funcionalidades  do Controller
  - Recuperar o Texto Atual
@@ -379,9 +378,60 @@ class _Form extends State<Form>{
 
 }
 ```
-
-
+##### validator
+ - Fornece uma função de validação que verifica se o valor inserido no campo de texto é válido.
+ - Deve retornar uma String com uma mensagem de erro se não foi válido e null se for válido.
+ - O parâmetro value na função de validação contém o valor inserido no input.
  
+#### Widget Form
+ - Utilizado para agrupar e gerenciar widgets de entrada  de dados, de modo a facilitar a validação e o envio.
+
+**GlobalKey**
+ - A classe GlobalKey é uma chave global que pode ser usada para se comunicar com um objeto específico, independentemente de onde ele esteja na hierarquia de widgets.
+ 
+**GlobalKey<State>**, subclasse de globalkey
+ - Utilizada quando um widget possui um estado que você deseja acessar de fora do widget em que ele está.
+
+**Validate**
+ - O método validate percorre todos os validadores dos widgets de entrada dentro do Form e retorna true se todos os widgets são válidos.
+
+```dart
+Form(
+  key: _formKey,
+  child: Column(
+    children: [
+      // Adicione seus widgets de entrada aqui
+      TextFormField(
+       validator: (value) {
+        if (value == null || value.isEmpty) {
+         return 'Este campo não pode ficar em branco.';
+        }
+        return null;
+      },
+       // ... outras configurações do TextFormField
+     ),
+
+      // Outros widgets de entrada, botões, etc.
+    ],
+  ),
+),
+
+```
+```dart
+ElevatedButton(
+  onPressed: () {
+    if (_formKey.currentState!.validate()) {
+      // Se a validação for bem-sucedida, faça algo, como enviar os dados.
+      // Pode acessar os dados dos campos de texto por meio do controller ou
+      // pelo método onSaved no TextFormField.
+    }
+  },
+  child: Text('Enviar'),
+),
+
+```
+```dart
+```
  
 </details>
 
