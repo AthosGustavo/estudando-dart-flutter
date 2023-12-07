@@ -395,6 +395,66 @@ class _Form extends State<Form>{
 **Validate**
  - O método validate percorre todos os validadores dos widgets de entrada dentro do Form e retorna true se todos os widgets são válidos.
 
+**Validando um formulário com Autovalidate.onUserInteraction**
+ - Determina se o formulário deve ser validado automaticamente à medida que os campos de entrada são alterados.
+ - A validação ocorre automaticamente nos seguintes casos:
+   - O usuário toca em um campo de texto.
+   - O usuário digita algo no campo de texto.
+   - O usuário sai do campo de texto.
+  
+```dart
+class Formulario extends StatefulWidget {
+  @override
+  _Formulario createState() => _Formulario();
+}
+
+class _Formulario extends State<Formulario> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController controllerInputNome1 = TextEditingController();
+  TextEditingController controllerInputNome2 = TextEditingController();
+  String msgInputEmpty = 'Por favor, insira o seu nome.';
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      child: Column(
+        children: [
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return msgInputEmpty;
+              }
+              return null;
+            },
+            decoration: InputDecoration(labelText: 'Digite o seu nome 1.'),
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return msgInputEmpty;
+              }
+              return null;
+            },
+            decoration: InputDecoration(labelText: 'Digite o seu nome 2.'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                print('Dados salvos');
+              }
+            },
+            child: Text('Salvar'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+
 ```dart
 Form(
   key: _formKey,
