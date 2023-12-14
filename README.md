@@ -696,7 +696,9 @@ Padding(
 )
 
 ```
-
+Utilizando Border Radius
+ - Adiciona o arredondamento em todas as bordas
+  - ```borderRadius: BorderRadius.circular(10.0),```
 
 
 </details>
