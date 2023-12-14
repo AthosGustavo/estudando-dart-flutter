@@ -666,6 +666,16 @@ Text(
 #### Padding
  - Existe duas formas de usar o padding:Adicionando padding em um widget como um Stack e adicionando padding a um componente que possui vários widgets.
 
+```
+padding: EdgeInserts
+```
+Métodos de EdgeInserts
+
+ - ```all```: Espaçamento aplicado em todas as direções.
+ - ```only```: Permite especificar diferentes valores para cada direção individualmente.
+ - ```symmetric```: Permite especificar valores diferentes para os lados vertical e horizontal.
+ - ```fromLTRB```: Permite especificar valores para as quatro direções diretamente.
+
 *Adicionando Padding a um Container*
 ```dart
 Container(
@@ -686,5 +696,8 @@ Padding(
 )
 
 ```
+
+
+
 </details>
 
