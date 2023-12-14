@@ -128,59 +128,7 @@ class _Teste extends State<Teste>{
  - O Widget Stack é uma alternativa ao Container. O Stack permite agrupamento de widgets e aninhamento de outras Stacks
  - O Stack sozinho não possui dimensāo e dessa forma não é possível definir uma cor de fundo.O Stack só possui dimensão se ele possuir um filho ou seja filho de outro widget, a exemplo de um Container.
 
-#### Exemplo de estilização de Container
-```dart
 
- Container(
-  width: 200.0,
-  height: 100.0,
-  color: Colors.blue,
-  alignment: Alignment.center,
-  margin: EdgeInsets.all(16.0),
-  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
-  child: Text(
-    'Olá, Mundo!',
-    style: TextStyle(color: Colors.white),
-  ),
-)
-
-```
-#### Exemplo de estilização de um widget Text
-```dart
-Text(
-  'Olá, Mundo!',
-  style: TextStyle(
-    fontSize: 20.0,
-    fontWeight: FontWeight.bold,
-    color: Colors.blue,
-  ),
-  textAlign: TextAlign.center,
-)
-```
-
-#### Padding
- - Existe duas formas de usar o padding:Adicionando padding em um widget como um Stack e adicionando padding a um componente que possui vários widgets.
-
-*Adicionando Padding a um Container*
-```dart
-Container(
-  padding: EdgeInsets.all(8.0), // Adiciona padding de 8 pixels em todos os lados
-  child: // Seu conteúdo aqui,
-)
-
-```
-*Adicionando padding a um componente com vários widgets*
-```dart
-Padding(
-  padding: EdgeInsets.all(8.0), // Adiciona padding de 8 pixels em todos os lados
-  child: Row(
-    children: [
-      // Seus widgets da linha aqui
-    ],
-  ),
-)
-
-```
 
 #### ListView
  - O ListView serve para criar uma coluna dinâmica de widgets e permite a rolagem da tela.
@@ -680,9 +628,63 @@ class MyApp extends StatelessWidget {
 ```
  
 </details>
-
-
-
-
-
 </details>
+
+<details>
+ <summary>Alinhamento e estilização de Widgets</summary>
+
+ #### Exemplo de estilização de Container
+```dart
+
+ Container(
+  width: 200.0,
+  height: 100.0,
+  color: Colors.blue,
+  alignment: Alignment.center,
+  margin: EdgeInsets.all(16.0),
+  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 12.0),
+  child: Text(
+    'Olá, Mundo!',
+    style: TextStyle(color: Colors.white),
+  ),
+)
+
+```
+#### Exemplo de estilização de um widget Text
+```dart
+Text(
+  'Olá, Mundo!',
+  style: TextStyle(
+    fontSize: 20.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.blue,
+  ),
+  textAlign: TextAlign.center,
+)
+```
+
+#### Padding
+ - Existe duas formas de usar o padding:Adicionando padding em um widget como um Stack e adicionando padding a um componente que possui vários widgets.
+
+*Adicionando Padding a um Container*
+```dart
+Container(
+  padding: EdgeInsets.all(8.0), // Adiciona padding de 8 pixels em todos os lados
+  child: // Seu conteúdo aqui,
+)
+
+```
+*Adicionando padding a um componente com vários widgets*
+```dart
+Padding(
+  padding: EdgeInsets.all(8.0), // Adiciona padding de 8 pixels em todos os lados
+  child: Row(
+    children: [
+      // Seus widgets da linha aqui
+    ],
+  ),
+)
+
+```
+</details>
+
