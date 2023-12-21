@@ -33,6 +33,151 @@ Cupertino Design
  - widgets que nao possuem limite de altura ou largura,podem resultar em overflow
 
 <details>
+ <summary>Context</summary>
+ 
+ ## Context
+ ### Exemplos práticos para entender o context
+
+ *Build context - contexto de construcao*
+ ----------------------------------------
+
+ #### Exemplo 1: Acionando o snackbar por meio de um botão
+
+- ScaffoldMessenger.of(context): Aqui, estamos usando o ScaffoldMessenger para acessar o Scaffold mais próximo na árvore de widgets.
+O Scaffold é responsável por exibir elementos de interface do usuário, como barras de aplicativos, gavetas e, neste caso, o SnackBar.
+
+- showSnackBar(SnackBar(...)): Ao chamar showSnackBar, estamos indicando ao Scaffold que exiba um SnackBar na parte inferior da tela.
+
+- content: Text('Texto alterado!'): O conteúdo do SnackBar é definido como um texto informando que o texto foi alterado.
+
+- context: O context é passado como argumento para ScaffoldMessenger.of para informar ao Flutter sobre a posição do widget na árvore de widgets.
+O BuildContext é necessário para que o Flutter saiba onde exibir o SnackBar na hierarquia de widgets.
+ 
+ ```dart
+ import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Context'),
+        ),
+        body: Botao(),
+      ),
+    );
+  }
+}
+
+class Botao extends StatefulWidget {
+  @override
+  _Botao createState() => _Botao();
+}
+
+class _Botao extends State<Botao> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child: Stack(children: [
+      ElevatedButton(
+          onPressed: () {
+            ScaffoldMessenger.of(context)
+                .showSnackBar(SnackBar(content: Text('Texto alterado')));
+          },
+          child: Text('Clique aqui'))
+    ]));
+  }
+}
+
+ ```
+
+#### Exemplo 2: Navegação de telas
+
+- Neste exemplo, quando o onPressed é acionado no ElevatedButton, o context passado para Navigator.of(context).push
+refere-se ao contexto do widget TelaA, que é o contexto em torno do botão que está sendo pressionado.
+
+- Ao fornecer esse contexto, o Flutter sabe onde na árvore de widgets a ação de navegação está ocorrendo.
+
+- Dentro do builder, uma nova instância da TelaB é criada. O BuildContext é passado como um parâmetro para essa função,
+fornecendo informações sobre o contexto do widget no qual a navegação está ocorrendo. Isso é essencial porque permite
+ao Flutter construir a TelaB de acordo com a hierarquia de widgets existente.
+
+- Observe que em `Navigator.of(context).push` é ultilado o context para recuperar o contexto da TelaA criada com o metodo Widget build
+e que após isso o metodo build é usado novamente na linha 29 para fornecer informacoes do widget TelaB
+
+
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: TelaA(),
+    );
+  }
+}
+
+class TelaA extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tela A'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Use o BuildContext para navegar para TelaB
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return TelaB();
+                },
+              ),
+            );
+          },
+          child: Text('Ir para Tela B'),
+        ),
+      ),
+    );
+  }
+}
+
+class TelaB extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tela B'),
+      ),
+      body: Center(
+        child: Text('Esta é a Tela B'),
+      ),
+    );
+  }
+}
+
+```
+
+
+
+ 
+</details>
+
+<details>
  <summary>Widget</summary>
 
  
