@@ -36,6 +36,12 @@ Cupertino Design
  <summary>Context</summary>
  
  ## Context
+ - Os widgets sao organizados de forma hierarquica em uma arvore de widgets ,mas por si so, os widgets nao conhecem o seu grau de parentescos com outros widgets.
+ - O metodo BuildContext serve exatamente para localizar,levar informacoes e informar grau de parentesco.
+ - As informacoes de context so podem ser obtidas no fluxo de baixo para cima,ou seja, filho para pai.
+ 
+
+ 
  ### Exemplos práticos para entender o context
 
  *Build context - contexto de construcao*
