@@ -854,3 +854,57 @@ Utilizando Border Radius
 
 </details>
 
+<details>
+ <summary>Método Navigate</summary>
+
+ ## MaterialPageRoute
+  - O MaterialPageRoute é uma classe em Flutter que representa uma rota que utiliza as transições do Material Design ao navegar entre telas.
+ 
+ ## Explicando o context 
+ 
+ - O context utilizado no trecho Navigator.push(context, ...) é o mesmo context passado para a função build(BuildContext context).
+ - O primeiro parâmetro do Navigator.push é o context atual, indicando de onde a navegação está sendo iniciada.
+ - O segundo parâmetro é uma instância de MaterialPageRoute. O construtor dessa classe aceita um argumento chamado builder, que é uma função que recebe o (context) e retorna o widget que deve ser construído para representar a nova rota.
+ - o context passado para o MaterialPageRoute é um novo contexto criado com base no contexto e nas informações da próxima tela.Esse contexto é usado para garantir que o novo widget (FormScreen neste caso) seja construído com o contexto apropriado, herdados do contexto do widget pai (onde a navegação foi iniciada). Isso é essencial para manter a consistência e acesso correto aos recursos e configurações do ambiente.
+
+```dart
+class _InitialScreen extends State<InitialScreen>{
+
+  @override
+  Widget build(BuildContext context){
+    
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Registrar pet')
+      ),
+      body: ListView(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context){
+              return FormScreen();
+            }
+            
+            )
+          );
+        },
+        child: Icon(Icons.add),
+      ),
+      
+    );
+  }
+}
+```
+
+## Sintaxe dos métodos
+
+```dart
+Navigator.push(contextoAtual, MaterialPageRoute)
+
+MaterialPageRoute(builder: (novoContexto){return Widget})
+```
+
+ 
+ 
+</details>
