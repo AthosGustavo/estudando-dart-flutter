@@ -921,6 +921,34 @@ Navigator.pop(context, result)
  - Parâmetro usado para passar dados de volta para a rota anterior
 
 
+## Recebimento de resultados
+ - Após efetuar o método Navigate.pop() é necessário enviar valores para a tela anterior, a exemplo de uma atualização de lista após realizar um cadastro em um formulário.
+ - Sendo assim, é possível encadear um método then ao Navigator.push que levou a tela atual e dentro do then, chamar o setState para atualizar estados.
+
+```dart
+Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context){
+                return FormScreen(formDataController); //estudar sobre a necessidade de passar a instancia de formDataController no parametro de FormScreen
+              }
+            
+            )
+          ).then((result){ //ESTUDAR SOBRE THEN
+            //if (result != null && result is int){
+              setState(() { //O método setState nao aceita parametros
+                result.listaRegistros.length;
+                
+                // Mesmo que o escopo do setState esteja vazio, o Flutter
+                // percebe a mudança de estado e reconstrói automaticamente
+                // o widget. Isso resulta na reconstrução do ListView.builder,
+                // que por sua vez atualiza a lista de registros na interface
+                // do usuário.
+
+              });
+            //}
+          });
+```
+
  
  
 </details>
