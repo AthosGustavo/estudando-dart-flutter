@@ -905,6 +905,27 @@ Navigator.push(contextoAtual, MaterialPageRoute)
 MaterialPageRoute(builder: (novoContexto){return Widget})
 ```
 
+# Navigate.pop
+ - Volta para uma página anterior.
+
+```
+Navigator.pop(context, result)
+```
+
+## Parâmetros
+
+**Context**
+ - Contexto da tela atual
+
+**result, parâmetro opcional**
+ - Parâmetro usado para passar dados de volta para a rota anterior
+
+
  
  
 </details>
+
+
+
+
+
