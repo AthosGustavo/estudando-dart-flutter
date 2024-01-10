@@ -851,6 +851,23 @@ Utilizando Border Radius
  - Adiciona o arredondamento em todas as bordas
   - ```borderRadius: BorderRadius.circular(10.0),```
 
+## Alinhamento de widgets
+
+#### crossAxisAlignment
+ - Usado em widgets como Column e Row
+
+*Usado em uma Column*
+ - Controla a posição horizontal dos elementos filhos
+
+*Usado em uma Row*
+ - Controla a posiçao vertical dos elementos filhos
+
+#### mainAxisAlignment
+*Usado em uma Colunm*
+ - controla a posição horizontal dos elementos filhos
+
+*Usado em uma Row*
+ - Controla a posição vertical dos elementos filhos
 
 </details>
 
