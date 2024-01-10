@@ -869,6 +869,13 @@ Utilizando Border Radius
 *Usado em uma Row*
  - Controla a posição vertical dos elementos filhos
 
+#### Alignment
+ - Pode ser usado em qualquer widget que aceite um filho e geralmente é aplicado a widgets como Container, Stack 
+ - Utilizado nos elementos filhos de Stack.
+ - Permite posicionamento de ambos os eixos.
+ - ´alignment: Alignment.´
+
+
 </details>
 
 <details>
