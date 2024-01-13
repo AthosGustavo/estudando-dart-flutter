@@ -89,6 +89,30 @@ Cupertino Design
     - Chamadas na api
     - leitura/gravacao de arquivos
  </details>
+ <details>
+  <summary>File</summary>
+
+  ## File
+   - A classe é usada para interagir com arquivos no sistema de arquivos do dispositivo.
+   - A classe fornece métodos e propriedades para interagir com os arquivos do sistema.
+   - É possível obter informações do arquivo, como tamanho, última modificacao, caminho e etc.
+  A classe é usada para interagir com arquivos no sistema de arquivos do dispositivo.
+  <details>
+   <summary>ImagePicker</summary>
+
+  ## ImagePicker
+   - Classe que fornece acesso a câmera e a galeria do dispositvo para obter imagens
+  **pickImage**
+   - O método permite selecionar uma imagem da galeria ou tirar uma foto usando a camera
+   - O método aceita até 5 parâmetros, no entanto apenas o primeiro é obrigatório
+   - O primeiro parâmetro especifica se a imagem será da galeria ou se a foto será tirada pela camera
+   - galeria: ImagePicker(source: ImageSource.gallery);
+   - camera:  ImagePicker(source: ImageSource.camera);
+   
+
+   
+  </details>
+ </details>
 </details>
 
 <details>
