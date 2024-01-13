@@ -1,5 +1,7 @@
 # Estudando Dart/Flutter
 
+*Documento em constante edição!*
+
 <details>
  <summary>Lógica de programação</summary>
 
