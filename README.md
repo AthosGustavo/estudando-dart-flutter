@@ -238,7 +238,6 @@ class TelaB extends StatelessWidget {
 ```
 
 
-
  
 </details>
 
@@ -723,6 +722,47 @@ class Componente extends StatelessWidget{
     
 }
 ```
+<details>
+ <summary>InkWell</summary>
+
+ ## InkWell
+  - Este widget tem o poder de transformar qualquer widget clicável e executar uma função.
+ ```dart
+  return Stack(
+      
+      alignment: Alignment.bottomCenter, children: [
+      InkWell(
+        onTap:(){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DetailsScreen(nome: widget.nome, numero: widget.numero, endereco: widget.endereco, nomePet: widget.nomePet))
+          );
+        },
+        child: Ink(
+          height: 220,
+          width: 280,
+          padding:EdgeInsets.only(top: 8.0, right: 16.0, bottom: 8.0, left: 16.0),
+          // /margin: EdgeInsets.all(8.0), // Adiciona uma margem externa
+          decoration: BoxDecoration(
+            color: Colors.blue, // Cor de fundo azul
+            borderRadius: BorderRadius.circular(10.0), // Borda arredondada
+          ),
+          child: Column(
+            crossAxisAlignment:
+                CrossAxisAlignment.start, // Alinha o texto à esquerda
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(widget.nome),
+              Text(widget.numero),
+              Text(widget.endereco),
+              Text(widget.nomePet),
+            ],
+          ),
+        ),
+      ),
+    ]);
+ ```
+</details>
 
 
 <details>
