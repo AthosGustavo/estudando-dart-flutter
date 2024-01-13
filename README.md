@@ -2,25 +2,6 @@
 
 *Documento em constante edição!*
 
-<details>
- <summary>Lógica de programação</summary>
-
- <details>
-  <summary>Future</summary>
-
-  O método Future é utilizado para realizar operações assíncronas
-  
-  ```
-  Future<TipoRetorno> nomeFuncao(Tipo parametro parametero) async {
-   
-   return someValue;  // ou throw SomeException;
-  }
-
-  ```
-  
- </details>
-</details>
-
 Material Design
  - biblioteca com componentes estilizados criado pela google
 Cupertino Design
@@ -33,6 +14,66 @@ Cupertino Design
 ## Flutter inspector
  - serve para visualizar a arvore de widgets e o tamanho dos widgets
  - widgets que nao possuem limite de altura ou largura,podem resultar em overflow
+
+<details>
+ <summary>Lógica de programação</summary>
+
+ ## Lógica de programação
+ 
+- Imprimir no console: print();
+- String se escreve com S maíusculo
+- O tipo de variavel ´dynamic´ não possui tipagem.
+
+**Concatenação de String**
+```dart
+  'Nome: ${nome}'
+```
+
+- Increment de variáveis
+ ```dart
+  int numero = 1
+  numero = numero + 1;
+  numero += 1
+ ```
+- A primeira incrementação é igual a segunda.
+
+**Sintaxe dos operadores**
+ ```dart
+  and -> &&
+  or  -> ||
+ ```
+
+## Operadores null
+
+**Operador nullable ??**
+ - Operador usado para fornecer valores padrão para uma variável vazia
+
+*EXEMPLO*
+ ```dart    
+ String nome;
+ String nomeCompleto = nome ?? 'Convidado';
+ print('Olá, $nomeCompleto');
+```
+     
+**Operador ?**
+ - Usado para lidar com possíveis valores nulos
+   
+ - 1 caso: Usando o operador após um tipo
+   - `String? nome;`
+   - `String?` indica que `nome` pode ser nulo`
+   
+ - 2 caso: Acesso condicional
+   - Usado para acessar funções e atributos de uma classe que a intância pode ser possivelmente nula.
+   - Se nome não for nulo, retorna o comprimento, caso contrário, retorna null
+ ```dart
+ String? nome;
+ int comprimentoDoNome = nome?.length
+ ```
+ - 3 operador non-null !
+   - Operador usado para confirmar que tal variável não será nula
+   - `sintaxe: variavel!`
+ 
+</details>
 
 <details>
  <summary>Context</summary>
@@ -978,6 +1019,7 @@ Navigator.push(
  
  
 </details>
+
 
 
 
