@@ -72,7 +72,23 @@ Cupertino Design
  - 3 operador non-null !
    - Operador usado para confirmar que tal variável não será nula
    - `sintaxe: variavel!`
+
+ <details>
+  <summary>Future</summary>
+
+  ## Método Future
+  - Classe que representa um valor ou erro que estará disponível em aalgum momento no futuro
  
+ ```dart
+  Future<tipoDoResultado> nomeMetodo() async {
+   variavel = await metodo();
+  }
+ ```
+ 
+  - Situações em que Future é usado
+    - Chamadas na api
+    - leitura/gravacao de arquivos
+ </details>
 </details>
 
 <details>
