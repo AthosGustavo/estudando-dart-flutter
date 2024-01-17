@@ -576,6 +576,11 @@ class _Form extends State<Form>{
 **Validate**
  - O método validate percorre todos os validadores dos widgets de entrada dentro do Form e retorna true se todos os widgets são válidos.
 
+**currentState**
+ - currentState é uma propriedade do objeto _formKey. Ele é usado para acessar o estado atual do widget Form.
+ - O estado de um formulário em Flutter é uma instância da classe FormState. Este estado contém métodos que podem ser usados para interagir com o formulário, como validação e reset.
+ - A expressão _formKey.currentState retorna a instância atual do estado do formulário.
+
 **Validando um formulário com Autovalidate.onUserInteraction**
  - Determina se o formulário deve ser validado automaticamente à medida que os campos de entrada são alterados.
  - A validação ocorre automaticamente nos seguintes casos:
