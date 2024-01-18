@@ -9,7 +9,7 @@ Cupertino Design
 
 ## Método build
  - No Flutter, a construção da interface do usuário é realizada através do método build de widgets.
- - Método usado em situações onde ocorre dinamicidade e alterações na tela,a exemplo de um atualizador e reconstrutor de estados e widget em situações onde alguma informação na tela é mudada por meio de uma interação.Por outro lado, o  método também é usado em situações estáticas.
+ - Método usado em situações onde ocorre dinamicidade e alterações na tela,a exemplo de um atualizador e reconstrutor de estados e  em situações onde alguma informação na tela é mudada por meio de uma interação.Por outro lado, o  método também é usado em situações estáticas.
 
 ## Flutter inspector
  - serve para visualizar a arvore de widgets e o tamanho dos widgets
@@ -907,6 +907,32 @@ class MyApp extends StatelessWidget {
 ```
  
 </details>
+</details>
+<details>
+ <summary>Widgets constantes</summary>
+ ## Tempo de compilação
+ - Momento em que o código-fonte do aplicativo é traduzido para código de máquina ou bytecode antes da execução.
+
+ ## Tempo de execução
+ - Momento em que o aplicativo está em execução no dispositivo do usuário, respondendo a eventos e interagindo com o usuário.
+
+ ## Declarando widgets com const
+ - Ao declarar um widget com const é indicado para o compilador que as propriedades e valores desse widget são conhecidos em tempo de compilação.
+ - Isso permite que o Flutter otimize o desempenho reutilizando a mesma instância do widget sempre que possível.
+ - Widgets declarados com const são imutáveis, ou seja, uma vez criado, não pode ser alterado.Se o flutter sabe que uma instancia de um widget nunca será alterada,ele pode reutiliza-la.
+
+
+   
+
+
+ 
+
+
+
+
+
+
+  
 </details>
 
 <details>
