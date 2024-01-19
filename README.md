@@ -939,6 +939,57 @@ class MyApp extends StatelessWidget {
 <details>
  <summary>Alinhamento e estilização de Widgets</summary>
 
+ ## Estilização de Widgets
+
+ ### Larguras, alturas, preencimento e espaçamento
+ #### double.infinity
+  - Propriedade usada para fazer que um container tenha altura ou largura igual aos limites da dimenção do dispositivo.
+
+ #### MediaQuery.of(context).size.width/height
+  - Possui o mesmo efeito de double.infinity, no entanto é mais apropriada para construir layouts responsivos,pois as configurações são flexíveis para todo dispositivo.
+ 
+ ### Container
+ #### decoration
+  - Propriedade que agrupa as porpriedades de estilização.
+ ```dart
+ decoration: BoxDecoration()
+ ```
+ ##### Bordas
+ 
+  - boder
+ ```dart
+ border:Border.all(  // all Adiciona borda em todos os lados
+  color: Colors.cor, // cor da borda
+  width: x           // largura da borda
+ )
+ ```
+
+ ##### shape
+  - Propriedade usada para dar forma a containers
+  - aplica formas circulares e retangulares.
+
+ ```dart
+ shape: BoxShape.circle
+ ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
  #### Exemplo de estilização de Container
 ```dart
 
