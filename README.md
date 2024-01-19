@@ -947,6 +947,46 @@ class MyApp extends StatelessWidget {
 
  #### MediaQuery.of(context).size.width/height
   - Possui o mesmo efeito de double.infinity, no entanto é mais apropriada para construir layouts responsivos,pois as configurações são flexíveis para todo dispositivo.
+
+ #### Margin
+  - Adiciona espaçamento ao lado externo de um widget
+ 
+ *Adicionando margem em todos os lados de um widget*
+ ```dart
+ margin: EdgeInsert.all(4.0);
+ ```
+
+ *Adicionando margem apenas um lado do widget*
+ ```dart
+ margin: EdgeInsert.only(left: 5.0);
+ ```
+
+ *Adicionando margem com valores diferentes em todos os lados de um container*
+ ```dart
+ margin: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0)
+ ```
+ #### Padding
+  - Adiciona margem no lado interno de um widget
+
+ *Adicionando margem em todos os lados de um widget*
+ ```dart
+ padding: EdgeInsert.all(4.0);
+ ```
+
+ *Adicionando margem apenas um lado do widget*
+ ```dart
+ padding: EdgeInsert.only(left: 5.0);
+ ```
+
+ *Adicionando margem com valores diferentes em todos os lados de um container*
+ ```dart
+ padding: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0)
+ ```
+ *Adicionando margem vertical e horizontal*
+ ```dart
+  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+ ```
+ 
  
  ### Container
  #### decoration
