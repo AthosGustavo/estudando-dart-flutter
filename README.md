@@ -948,6 +948,13 @@ class MyApp extends StatelessWidget {
  #### MediaQuery.of(context).size.width/height
   - Possui o mesmo efeito de double.infinity, no entanto é mais apropriada para construir layouts responsivos,pois as configurações são flexíveis para todo dispositivo.
 
+ **OBs**: *As propriedades de margin e padding podem ser aplicadas nos seguintes widgets* ⚠️
+  - Container
+  - Card
+  - ListView
+  - Column,Row
+  - AppBar
+    
  #### Margin
   - Adiciona espaçamento ao lado externo de um widget
  
