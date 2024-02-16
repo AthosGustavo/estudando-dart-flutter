@@ -1229,6 +1229,49 @@ Navigator.push(
  
  
 </details>
+<details>
+ <summary>Requisições</summary>
+
+ # Requisições
+
+ ## Requisições utilando a classe http
+  - A classe http permite fazer requisições para endpoints
+  - Para ter acesso a classe, execute o comando no terminal `flutter pub add http`, a versão do `http` será adicionada no arquivo `pubspec.yaml`
+  - Documentação: `https://pub.dev/packages/http/install`
+
+ ### Método POST
+ *SINTAXE*
+ ```javascript
+ final response = await http.post(
+   url convertida para uri,
+   body:dadoEnviado,
+   headers: {
+     'tipoDoDado':'json'
+   },
+ );
+ ```
+ ##### Convertendo URL para URI
+ ```javascript
+ static const apiUrl = Uri.parse("http://localhost:8080");
+ ```
+ ##### Convertendo o dado a ser enviado para JSON - JAVASCRIPT OBJECT NOTATION
+ ```javascript
+ import 'dart:convert'; //Permite a utilização de jsonEncode e jsonDecode
+
+ final map<String, dynamic> dadosEnviados = {
+   "email":"athos@.com",
+   "senha":"123"
+ }
+
+ body:jsonEncode(dadosEnviados),
+ ```
+ #### Especificando o tipo de dado a ser enviado na requisição headers
+ ```javascript
+ headers: {'Content-Type': 'application/json'}
+ ```
+ 
+
+</details>
 
 
 
