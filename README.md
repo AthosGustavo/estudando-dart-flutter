@@ -1265,12 +1265,15 @@ Navigator.push(
 
  body:jsonEncode(dadosEnviados),
  ```
- #### Especificando o tipo de dado a ser enviado na requisição headers
+ ##### Especificando o tipo de dado a ser enviado na requisição headers
  ```javascript
  headers: {'Content-Type': 'application/json'}
  ```
+ ### Retorno de await http.post
+  - statusCode:`variavel.statusCode`
+  - headers da resposta:`variavel.headers`
+  - resposta em bytes que pode ser convertida em uma string: `variavel.bodyBytes`
  
-
 </details>
 
 
